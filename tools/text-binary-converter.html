@@ -185,13 +185,23 @@
             }
             
             try {
-                const text = input.split(' ').map(binary => 
-                    String.fromCharCode(parseInt(binary, 2))
-                ).join('');
+                const binaryArray = input.split(' ').filter(binary => binary.length > 0);
+                if (binaryArray.length === 0) {
+                    alert('Please enter valid binary code separated by spaces');
+                    return;
+                }
+                
+                const text = binaryArray.map(binary => {
+                    const decimal = parseInt(binary, 2);
+                    if (isNaN(decimal)) {
+                        throw new Error('Invalid binary: ' + binary);
+                    }
+                    return String.fromCharCode(decimal);
+                }).join('');
                 
                 displayResult(text);
             } catch (error) {
-                alert('Invalid binary format. Please use space-separated 8-bit binary numbers.');
+                alert('Invalid binary format. Please use space-separated 8-bit binary numbers. Error: ' + error.message);
             }
         }
         
