@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator | Body Mass Index Calculator | Free Health Tool</title>
+    <meta name="description" content="Calculate your Body Mass Index (BMI) instantly. Free BMI calculator with health categories, ideal weight ranges, and health recommendations.">
+    <meta name="keywords" content="BMI calculator, body mass index, BMI chart, healthy weight, obesity calculator, fitness calculator">
+    <link rel="canonical" href="https://rapidtools.site/tools/bmi-calculator.html">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4030361427497789" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../" class="logo">RapidTools</a>
+            <ul class="nav-menu">
+                <li><a href="../">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search tools...">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>BMI Calculator</h1>
+                <p>Calculate your Body Mass Index and get health recommendations</p>
+            </div>
+
+            <div class="tool-form">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="height">Height:</label>
+                        <input type="number" id="height" class="form-input" placeholder="Enter height" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="heightUnit">Height Unit:</label>
+                        <select id="heightUnit" class="form-input">
+                            <option value="cm">Centimeters (cm)</option>
+                            <option value="ft">Feet & Inches</option>
+                            <option value="m">Meters (m)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="feetInches" style="display: none;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label for="feet">Feet:</label>
+                            <input type="number" id="feet" class="form-input" placeholder="Feet" min="0" max="8">
+                        </div>
+                        <div class="form-group">
+                            <label for="inches">Inches:</label>
+                            <input type="number" id="inches" class="form-input" placeholder="Inches" min="0" max="11">
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="form-group">
+                        <label for="weight">Weight:</label>
+                        <input type="number" id="weight" class="form-input" placeholder="Enter weight" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label for="weightUnit">Weight Unit:</label>
+                        <select id="weightUnit" class="form-input">
+                            <option value="kg">Kilograms (kg)</option>
+                            <option value="lbs">Pounds (lbs)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button onclick="calculateBMI()" class="btn">Calculate BMI</button>
+            </div>
+
+            <div id="results" style="display: none;">
+                <div class="result-container">
+                    <div class="result-value" id="bmiValue"></div>
+                    <div id="bmiCategory" style="font-size: 18px; font-weight: 600; margin-bottom: 15px;"></div>
+                    <div id="bmiDescription"></div>
+                    <button onclick="copyBMIResult()" class="btn btn-secondary" style="margin-top: 15px;">Copy Result</button>
+                </div>
+            </div>
+
+            <!-- Middle Ad -->
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4030361427497789"
+                     data-ad-slot="0987654321"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- Related Tools -->
+            <div style="margin-top: 40px; padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                <h3>Related Health Tools</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <a href="age-calculator.html" class="tool-link">Age Calculator</a>
+                    <a href="percentage-calculator.html" class="tool-link">Percentage Calculator</a>
+                    <a href="unit-converter.html" class="tool-link">Unit Converter</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1122334455"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Popular Tools</h4>
+                <ul>
+                    <li><a href="binary-converter.html">Binary Converter</a></li>
+                    <li><a href="temperature-converter.html">Temperature Converter</a></li>
+                    <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+                    <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="../#converters">Converters</a></li>
+                    <li><a href="../#calculators">Calculators</a></li>
+                    <li><a href="../#text-tools">Text Tools</a></li>
+                    <li><a href="../#unit-converters">Unit Converters</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RapidTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.getElementById('heightUnit').addEventListener('change', function() {
+            const feetInches = document.getElementById('feetInches');
+            const heightInput = document.getElementById('height');
+            
+            if (this.value === 'ft') {
+                feetInches.style.display = 'block';
+                heightInput.style.display = 'none';
+            } else {
+                feetInches.style.display = 'none';
+                heightInput.style.display = 'block';
+            }
+        });
+        
+        function calculateBMI() {
+            let height, weight;
+            const heightUnit = document.getElementById('heightUnit').value;
+            const weightUnit = document.getElementById('weightUnit').value;
+            
+            weight = parseFloat(document.getElementById('weight').value);
+            if (isNaN(weight) || weight <= 0) {
+                alert('Please enter a valid weight');
+                return;
+            }
+            
+            if (weightUnit === 'lbs') {
+                weight = weight * 0.453592;
+            }
+            
+            if (heightUnit === 'ft') {
+                const feet = parseFloat(document.getElementById('feet').value) || 0;
+                const inches = parseFloat(document.getElementById('inches').value) || 0;
+                if (feet <= 0 && inches <= 0) {
+                    alert('Please enter a valid height');
+                    return;
+                }
+                height = (feet * 12 + inches) * 0.0254;
+            } else {
+                height = parseFloat(document.getElementById('height').value);
+                if (isNaN(height) || height <= 0) {
+                    alert('Please enter a valid height');
+                    return;
+                }
+                
+                if (heightUnit === 'cm') {
+                    height = height / 100;
+                }
+            }
+            
+            const bmi = weight / (height * height);
+            
+            let category, description, color;
+            if (bmi < 18.5) {
+                category = 'Underweight';
+                description = 'Your BMI indicates you may be underweight.';
+                color = '#3b82f6';
+            } else if (bmi < 25) {
+                category = 'Normal Weight';
+                description = 'Your BMI is in the healthy weight range.';
+                color = '#10b981';
+            } else if (bmi < 30) {
+                category = 'Overweight';
+                description = 'Your BMI indicates you may be overweight.';
+                color = '#f59e0b';
+            } else {
+                category = 'Obese';
+                description = 'Your BMI indicates obesity.';
+                color = '#ef4444';
+            }
+            
+            document.getElementById('bmiValue').textContent = `BMI: ${bmi.toFixed(1)}`;
+            document.getElementById('bmiCategory').textContent = category;
+            document.getElementById('bmiCategory').style.color = color;
+            document.getElementById('bmiDescription').textContent = description;
+            document.getElementById('results').style.display = 'block';
+        }
+        
+        function copyBMIResult() {
+            const bmi = document.getElementById('bmiValue').textContent;
+            const category = document.getElementById('bmiCategory').textContent;
+            const result = `${bmi} - ${category}`;
+            copyToClipboard(result);
+        }
+    </script>
+</body>
+</html>
