@@ -21,22 +21,22 @@ function performSearch() {
     
     // Simple search - redirect to tool if found
     const tools = {
-        'binary': '/tools/binary-converter.html',
-        'decimal': '/tools/binary-converter.html',
-        'hex': '/tools/binary-converter.html',
-        'temperature': '/tools/temperature-converter.html',
-        'celsius': '/tools/temperature-converter.html',
-        'fahrenheit': '/tools/temperature-converter.html',
-        'percentage': '/tools/percentage-calculator.html',
-        'percent': '/tools/percentage-calculator.html',
-        'bmi': '/tools/bmi-calculator.html',
-        'age': '/tools/age-calculator.html',
-        'interest': '/tools/simple-interest-calculator.html',
-        'text': '/tools/text-binary-converter.html',
-        'unit': '/tools/unit-converter.html',
-        'length': '/tools/unit-converter.html',
-        'weight': '/tools/unit-converter.html',
-        'mass': '/tools/unit-converter.html'
+        'binary': 'tools/binary-converter.html',
+        'decimal': 'tools/binary-converter.html',
+        'hex': 'tools/binary-converter.html',
+        'temperature': 'tools/temperature-converter.html',
+        'celsius': 'tools/temperature-converter.html',
+        'fahrenheit': 'tools/temperature-converter.html',
+        'percentage': 'tools/percentage-calculator.html',
+        'percent': 'tools/percentage-calculator.html',
+        'bmi': 'tools/bmi-calculator.html',
+        'age': 'tools/age-calculator.html',
+        'interest': 'tools/simple-interest-calculator.html',
+        'text': 'tools/text-binary-converter.html',
+        'unit': 'tools/unit-converter.html',
+        'length': 'tools/unit-converter.html',
+        'weight': 'tools/unit-converter.html',
+        'mass': 'tools/unit-converter.html'
     };
     
     for (let key in tools) {
