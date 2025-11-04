@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator | Calculate Interest Online Free</title>
+    <meta name="description" content="Calculate simple interest, total amount, and interest earned with our free online calculator. Perfect for loans, investments, and financial planning.">
+    <meta name="keywords" content="simple interest calculator, interest calculator, loan calculator, investment calculator, financial calculator">
+    <link rel="canonical" href="https://rapidtools.site/tools/simple-interest-calculator.html">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../" class="logo">RapidTools</a>
+            <ul class="nav-menu">
+                <li><a href="../">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search tools...">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXX"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Simple Interest Calculator</h1>
+                <p>Calculate simple interest, total amount, and interest earned</p>
+            </div>
+
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="principal">Principal Amount ($):</label>
+                    <input type="number" id="principal" class="form-input" placeholder="Enter principal amount" step="0.01" min="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="rate">Annual Interest Rate (%):</label>
+                    <input type="number" id="rate" class="form-input" placeholder="Enter interest rate" step="0.01" min="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="time">Time Period:</label>
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+                        <input type="number" id="time" class="form-input" placeholder="Enter time period" step="0.01" min="0">
+                        <select id="timeUnit" class="form-input">
+                            <option value="years">Years</option>
+                            <option value="months">Months</option>
+                            <option value="days">Days</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button onclick="calculateInterest()" class="btn">Calculate Interest</button>
+            </div>
+
+            <div id="results" style="display: none;">
+                <div class="result-container">
+                    <h3>Calculation Results:</h3>
+                    <div id="resultDetails"></div>
+                    <button onclick="copyInterestResult()" class="btn btn-secondary" style="margin-top: 15px;">Copy Results</button>
+                </div>
+            </div>
+
+            <!-- Middle Ad -->
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXX"
+                     data-ad-slot="0987654321"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- Information Section -->
+            <div style="margin-top: 40px;">
+                <h2>Simple Interest Formula</h2>
+                <div style="padding: 20px; background: var(--light-bg); border-radius: 8px; margin: 20px 0;">
+                    <h4>Simple Interest = (Principal × Rate × Time) / 100</h4>
+                    <p><strong>Total Amount = Principal + Simple Interest</strong></p>
+                </div>
+
+                <h3>Formula Components</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>💰 Principal (P)</h4>
+                        <p>The initial amount of money borrowed or invested</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>📈 Rate (R)</h4>
+                        <p>The annual interest rate expressed as a percentage</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>⏰ Time (T)</h4>
+                        <p>The time period for which money is borrowed or invested</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Simple vs Compound Interest</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="padding: 20px; background: white; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        <h4>Simple Interest</h4>
+                        <ul style="margin-top: 10px; line-height: 1.6;">
+                            <li>Interest calculated only on principal</li>
+                            <li>Interest amount remains constant</li>
+                            <li>Linear growth over time</li>
+                            <li>Easier to calculate</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 20px; background: white; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                        <h4>Compound Interest</h4>
+                        <ul style="margin-top: 10px; line-height: 1.6;">
+                            <li>Interest calculated on principal + accumulated interest</li>
+                            <li>Interest amount increases over time</li>
+                            <li>Exponential growth over time</li>
+                            <li>More complex calculation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Common Applications</h3>
+                <ul style="margin-top: 15px; line-height: 1.8;">
+                    <li><strong>Personal Loans:</strong> Calculate interest on car loans, personal loans</li>
+                    <li><strong>Savings Accounts:</strong> Some basic savings accounts use simple interest</li>
+                    <li><strong>Short-term Investments:</strong> Calculate returns on short-term investments</li>
+                    <li><strong>Educational Purposes:</strong> Learn basic interest calculations</li>
+                    <li><strong>Quick Estimates:</strong> Get rough estimates for financial planning</li>
+                </ul>
+            </div>
+
+            <!-- Related Tools -->
+            <div style="margin-top: 40px; padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                <h3>Related Financial Tools</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <a href="percentage-calculator.html" class="tool-link">Percentage Calculator</a>
+                    <a href="bmi-calculator.html" class="tool-link">BMI Calculator</a>
+                    <a href="age-calculator.html" class="tool-link">Age Calculator</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXX"
+             data-ad-slot="1122334455"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Popular Tools</h4>
+                <ul>
+                    <li><a href="binary-converter.html">Binary Converter</a></li>
+                    <li><a href="temperature-converter.html">Temperature Converter</a></li>
+                    <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+                    <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="../#converters">Converters</a></li>
+                    <li><a href="../#calculators">Calculators</a></li>
+                    <li><a href="../#text-tools">Text Tools</a></li>
+                    <li><a href="../#unit-converters">Unit Converters</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RapidTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function calculateInterest() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const timeValue = parseFloat(document.getElementById('time').value);
+            const timeUnit = document.getElementById('timeUnit').value;
+            
+            if (isNaN(principal) || isNaN(rate) || isNaN(timeValue) || principal <= 0 || rate < 0 || timeValue <= 0) {
+                alert('Please enter valid positive numbers for all fields');
+                return;
+            }
+            
+            // Convert time to years
+            let timeInYears;
+            switch(timeUnit) {
+                case 'years':
+                    timeInYears = timeValue;
+                    break;
+                case 'months':
+                    timeInYears = timeValue / 12;
+                    break;
+                case 'days':
+                    timeInYears = timeValue / 365;
+                    break;
+            }
+            
+            // Calculate simple interest
+            const simpleInterest = (principal * rate * timeInYears) / 100;
+            const totalAmount = principal + simpleInterest;
+            
+            // Display results
+            displayInterestResults(principal, rate, timeValue, timeUnit, simpleInterest, totalAmount, timeInYears);
+        }
+        
+        function displayInterestResults(principal, rate, timeValue, timeUnit, simpleInterest, totalAmount, timeInYears) {
+            const resultDetails = document.getElementById('resultDetails');
+            
+            resultDetails.innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                    <div style="text-align: center; padding: 20px; background: white; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--primary-color);">$${formatNumber(principal, 2)}</div>
+                        <div>Principal Amount</div>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: white; border-radius: 8px; border-left: 4px solid var(--success-color);">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--success-color);">$${formatNumber(simpleInterest, 2)}</div>
+                        <div>Interest Earned</div>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: white; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--accent-color);">$${formatNumber(totalAmount, 2)}</div>
+                        <div>Total Amount</div>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                    <h4 style="margin-bottom: 15px;">Calculation Details:</h4>
+                    <div style="display: grid; gap: 10px;">
+                        <div><strong>Principal:</strong> $${formatNumber(principal, 2)}</div>
+                        <div><strong>Interest Rate:</strong> ${rate}% per year</div>
+                        <div><strong>Time Period:</strong> ${timeValue} ${timeUnit} (${formatNumber(timeInYears, 2)} years)</div>
+                        <div><strong>Formula:</strong> SI = (P × R × T) / 100</div>
+                        <div><strong>Calculation:</strong> SI = (${formatNumber(principal, 2)} × ${rate} × ${formatNumber(timeInYears, 2)}) / 100 = $${formatNumber(simpleInterest, 2)}</div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('results').style.display = 'block';
+        }
+        
+        function copyInterestResult() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const simpleInterest = parseFloat(document.getElementById('resultDetails').querySelector('div:nth-child(2) div:first-child').textContent.replace('$', ''));
+            const totalAmount = parseFloat(document.getElementById('resultDetails').querySelector('div:nth-child(3) div:first-child').textContent.replace('$', ''));
+            
+            const result = `Principal: $${formatNumber(principal, 2)}\nInterest: $${formatNumber(simpleInterest, 2)}\nTotal: $${formatNumber(totalAmount, 2)}`;
+            copyToClipboard(result);
+        }
+        
+        // Real-time calculation
+        function setupRealTimeCalculation() {
+            const inputs = ['principal', 'rate', 'time'];
+            inputs.forEach(id => {
+                document.getElementById(id).addEventListener('input', function() {
+                    const principal = document.getElementById('principal').value;
+                    const rate = document.getElementById('rate').value;
+                    const time = document.getElementById('time').value;
+                    
+                    if (principal && rate && time && !isNaN(principal) && !isNaN(rate) && !isNaN(time)) {
+                        calculateInterest();
+                    }
+                });
+            });
+            
+            document.getElementById('timeUnit').addEventListener('change', function() {
+                const principal = document.getElementById('principal').value;
+                const rate = document.getElementById('rate').value;
+                const time = document.getElementById('time').value;
+                
+                if (principal && rate && time && !isNaN(principal) && !isNaN(rate) && !isNaN(time)) {
+                    calculateInterest();
+                }
+            });
+        }
+        
+        // Initialize real-time calculation
+        document.addEventListener('DOMContentLoaded', setupRealTimeCalculation);
+        
+        // Allow Enter key to trigger calculation
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    calculateInterest();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

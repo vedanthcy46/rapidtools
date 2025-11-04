@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator | Calculate Your Exact Age Online Free</title>
+    <meta name="description" content="Calculate your exact age in years, months, days, hours, and minutes. Free online age calculator with detailed breakdown and next birthday countdown.">
+    <meta name="keywords" content="age calculator, calculate age, age in days, age in months, birthday calculator, exact age">
+    <link rel="canonical" href="https://rapidtools.site/tools/age-calculator.html">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../" class="logo">RapidTools</a>
+            <ul class="nav-menu">
+                <li><a href="../">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search tools...">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXX"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Age Calculator</h1>
+                <p>Calculate your exact age and get detailed breakdown</p>
+            </div>
+
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="birthDate">Date of Birth:</label>
+                    <input type="date" id="birthDate" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="currentDate">Calculate Age As Of (Optional):</label>
+                    <input type="date" id="currentDate" class="form-input">
+                    <small style="color: #6b7280;">Leave empty to calculate current age</small>
+                </div>
+
+                <button onclick="calculateAge()" class="btn">Calculate Age</button>
+            </div>
+
+            <div id="results" style="display: none;">
+                <div class="result-container">
+                    <div class="result-value" id="mainAge"></div>
+                    <div id="detailedAge" style="margin: 20px 0;"></div>
+                    <div id="additionalInfo" style="margin: 20px 0;"></div>
+                    <button onclick="copyAgeResult()" class="btn btn-secondary">Copy Result</button>
+                </div>
+            </div>
+
+            <!-- Middle Ad -->
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXX"
+                     data-ad-slot="0987654321"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- Information Section -->
+            <div style="margin-top: 40px;">
+                <h2>How Age is Calculated</h2>
+                <p style="margin-bottom: 20px;">Our age calculator uses precise date arithmetic to determine your exact age. Here's what we calculate:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>📅 Years, Months, Days</h4>
+                        <p>Your exact age broken down into years, months, and remaining days</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>📊 Total Days Lived</h4>
+                        <p>The total number of days you've been alive</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>⏰ Hours & Minutes</h4>
+                        <p>Your age converted to hours and minutes</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>🎂 Next Birthday</h4>
+                        <p>Days remaining until your next birthday</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Age Calculation Facts</h3>
+                <ul style="margin-top: 15px; line-height: 1.8;">
+                    <li>Leap years are automatically accounted for in calculations</li>
+                    <li>The calculator considers the exact date, not just the year</li>
+                    <li>Results are updated in real-time as dates change</li>
+                    <li>You can calculate age for any past or future date</li>
+                    <li>All calculations are performed in your browser for privacy</li>
+                </ul>
+
+                <h3 style="margin-top: 30px;">Common Uses</h3>
+                <ul style="margin-top: 15px; line-height: 1.8;">
+                    <li><strong>Legal Documents:</strong> Verify age for contracts and applications</li>
+                    <li><strong>Medical Records:</strong> Calculate patient age for medical forms</li>
+                    <li><strong>Education:</strong> Determine school enrollment eligibility</li>
+                    <li><strong>Employment:</strong> Verify age requirements for jobs</li>
+                    <li><strong>Personal Interest:</strong> Find out your exact age in different units</li>
+                </ul>
+            </div>
+
+            <!-- Related Tools -->
+            <div style="margin-top: 40px; padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                <h3>Related Tools</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <a href="bmi-calculator.html" class="tool-link">BMI Calculator</a>
+                    <a href="percentage-calculator.html" class="tool-link">Percentage Calculator</a>
+                    <a href="simple-interest-calculator.html" class="tool-link">Simple Interest Calculator</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXX"
+             data-ad-slot="1122334455"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Popular Tools</h4>
+                <ul>
+                    <li><a href="binary-converter.html">Binary Converter</a></li>
+                    <li><a href="temperature-converter.html">Temperature Converter</a></li>
+                    <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+                    <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="../#converters">Converters</a></li>
+                    <li><a href="../#calculators">Calculators</a></li>
+                    <li><a href="../#text-tools">Text Tools</a></li>
+                    <li><a href="../#unit-converters">Unit Converters</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RapidTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Set current date as default
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('currentDate').value = today;
+        });
+        
+        function calculateAge() {
+            const birthDateInput = document.getElementById('birthDate').value;
+            const currentDateInput = document.getElementById('currentDate').value;
+            
+            if (!birthDateInput) {
+                alert('Please enter your date of birth');
+                return;
+            }
+            
+            const birthDate = new Date(birthDateInput);
+            const currentDate = currentDateInput ? new Date(currentDateInput) : new Date();
+            
+            if (birthDate > currentDate) {
+                alert('Birth date cannot be in the future');
+                return;
+            }
+            
+            // Calculate age
+            const ageData = calculateDetailedAge(birthDate, currentDate);
+            
+            // Display results
+            displayAgeResults(ageData, birthDate, currentDate);
+        }
+        
+        function calculateDetailedAge(birthDate, currentDate) {
+            let years = currentDate.getFullYear() - birthDate.getFullYear();
+            let months = currentDate.getMonth() - birthDate.getMonth();
+            let days = currentDate.getDate() - birthDate.getDate();
+            
+            // Adjust for negative days
+            if (days < 0) {
+                months--;
+                const lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+                days += lastMonth.getDate();
+            }
+            
+            // Adjust for negative months
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+            
+            // Calculate total days
+            const totalDays = Math.floor((currentDate - birthDate) / (1000 * 60 * 60 * 24));
+            
+            // Calculate total hours and minutes
+            const totalHours = totalDays * 24;
+            const totalMinutes = totalHours * 60;
+            
+            // Calculate next birthday
+            const nextBirthday = new Date(currentDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+            if (nextBirthday < currentDate) {
+                nextBirthday.setFullYear(currentDate.getFullYear() + 1);
+            }
+            const daysToNextBirthday = Math.ceil((nextBirthday - currentDate) / (1000 * 60 * 60 * 24));
+            
+            return {
+                years,
+                months,
+                days,
+                totalDays,
+                totalHours,
+                totalMinutes,
+                daysToNextBirthday,
+                nextBirthday
+            };
+        }
+        
+        function displayAgeResults(ageData, birthDate, currentDate) {
+            const { years, months, days, totalDays, totalHours, totalMinutes, daysToNextBirthday, nextBirthday } = ageData;
+            
+            // Main age display
+            document.getElementById('mainAge').textContent = `${years} years, ${months} months, ${days} days`;
+            
+            // Detailed breakdown
+            document.getElementById('detailedAge').innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                    <div style="text-align: center; padding: 15px; background: white; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--primary-color);">${years}</div>
+                        <div>Years</div>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: white; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--primary-color);">${months}</div>
+                        <div>Months</div>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: white; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--primary-color);">${days}</div>
+                        <div>Days</div>
+                    </div>
+                </div>
+            `;
+            
+            // Additional information
+            document.getElementById('additionalInfo').innerHTML = `
+                <h4 style="margin-bottom: 15px;">Additional Information:</h4>
+                <div style="display: grid; gap: 10px;">
+                    <div style="padding: 10px; background: white; border-radius: 5px;">
+                        <strong>Total Days Lived:</strong> ${totalDays.toLocaleString()} days
+                    </div>
+                    <div style="padding: 10px; background: white; border-radius: 5px;">
+                        <strong>Total Hours:</strong> ${totalHours.toLocaleString()} hours
+                    </div>
+                    <div style="padding: 10px; background: white; border-radius: 5px;">
+                        <strong>Total Minutes:</strong> ${totalMinutes.toLocaleString()} minutes
+                    </div>
+                    <div style="padding: 10px; background: white; border-radius: 5px;">
+                        <strong>Next Birthday:</strong> ${nextBirthday.toDateString()} (${daysToNextBirthday} days to go)
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('results').style.display = 'block';
+        }
+        
+        function copyAgeResult() {
+            const mainAge = document.getElementById('mainAge').textContent;
+            const totalDays = document.querySelector('#additionalInfo div:first-child').textContent;
+            const result = `Age: ${mainAge}\n${totalDays}`;
+            copyToClipboard(result);
+        }
+        
+        // Auto-calculate when dates change
+        document.getElementById('birthDate').addEventListener('change', function() {
+            if (this.value) {
+                calculateAge();
+            }
+        });
+        
+        document.getElementById('currentDate').addEventListener('change', function() {
+            const birthDate = document.getElementById('birthDate').value;
+            if (birthDate) {
+                calculateAge();
+            }
+        });
+    </script>
+</body>
+</html>

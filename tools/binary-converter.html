@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary to Decimal Converter | Hex to Binary | Free Online Tool</title>
+    <meta name="description" content="Convert between binary, decimal, hexadecimal, and octal number systems instantly. Free online number base converter with step-by-step explanations.">
+    <meta name="keywords" content="binary converter, decimal to binary, hex to binary, octal converter, number system converter">
+    <link rel="canonical" href="https://rapidtools.site/tools/binary-converter.html">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Binary Converter",
+        "description": "Convert between binary, decimal, hexadecimal, and octal number systems",
+        "url": "https://rapidtools.site/tools/binary-converter.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0"
+        }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../" class="logo">RapidTools</a>
+            <ul class="nav-menu">
+                <li><a href="../">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search tools...">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXX"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Binary ↔ Decimal ↔ Hex ↔ Octal Converter</h1>
+                <p>Convert between binary, decimal, hexadecimal, and octal number systems instantly</p>
+            </div>
+
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="inputValue">Enter Value:</label>
+                    <input type="text" id="inputValue" class="form-input" placeholder="Enter number to convert">
+                </div>
+                
+                <div class="form-group">
+                    <label for="fromBase">From Base:</label>
+                    <select id="fromBase" class="form-input">
+                        <option value="10">Decimal (Base 10)</option>
+                        <option value="2">Binary (Base 2)</option>
+                        <option value="16">Hexadecimal (Base 16)</option>
+                        <option value="8">Octal (Base 8)</option>
+                    </select>
+                </div>
+
+                <button onclick="convertNumber()" class="btn">Convert</button>
+            </div>
+
+            <div id="results" style="display: none;">
+                <div class="result-container">
+                    <h3>Conversion Results:</h3>
+                    <div id="resultsList"></div>
+                    <button onclick="copyAllResults()" class="btn btn-secondary" style="margin-top: 15px;">Copy All Results</button>
+                </div>
+            </div>
+
+            <!-- Middle Ad -->
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-XXXXXXXXXX"
+                     data-ad-slot="0987654321"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- Information Section -->
+            <div style="margin-top: 40px;">
+                <h2>How to Use the Number System Converter</h2>
+                <ol>
+                    <li>Enter the number you want to convert</li>
+                    <li>Select the base of your input number</li>
+                    <li>Click "Convert" to see results in all number systems</li>
+                    <li>Use "Copy All Results" to copy all conversions at once</li>
+                </ol>
+
+                <h3>Number System Guide</h3>
+                <ul>
+                    <li><strong>Binary (Base 2):</strong> Uses digits 0 and 1. Common in computer science.</li>
+                    <li><strong>Decimal (Base 10):</strong> Standard number system using digits 0-9.</li>
+                    <li><strong>Hexadecimal (Base 16):</strong> Uses digits 0-9 and letters A-F.</li>
+                    <li><strong>Octal (Base 8):</strong> Uses digits 0-7. Less common but still used in computing.</li>
+                </ul>
+            </div>
+
+            <!-- Related Tools -->
+            <div style="margin-top: 40px; padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                <h3>Related Tools</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <a href="text-binary-converter.html" class="tool-link">Text to Binary Converter</a>
+                    <a href="percentage-calculator.html" class="tool-link">Percentage Calculator</a>
+                    <a href="temperature-converter.html" class="tool-link">Temperature Converter</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-XXXXXXXXXX"
+             data-ad-slot="1122334455"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Popular Tools</h4>
+                <ul>
+                    <li><a href="binary-converter.html">Binary Converter</a></li>
+                    <li><a href="temperature-converter.html">Temperature Converter</a></li>
+                    <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+                    <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="../#converters">Converters</a></li>
+                    <li><a href="../#calculators">Calculators</a></li>
+                    <li><a href="../#text-tools">Text Tools</a></li>
+                    <li><a href="../#unit-converters">Unit Converters</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RapidTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function convertNumber() {
+            const inputValue = document.getElementById('inputValue').value.trim();
+            const fromBase = parseInt(document.getElementById('fromBase').value);
+            
+            if (!inputValue) {
+                alert('Please enter a value to convert');
+                return;
+            }
+            
+            try {
+                // Convert input to decimal first
+                let decimalValue;
+                if (fromBase === 10) {
+                    decimalValue = parseInt(inputValue);
+                } else {
+                    decimalValue = parseInt(inputValue, fromBase);
+                }
+                
+                if (isNaN(decimalValue)) {
+                    throw new Error('Invalid input for selected base');
+                }
+                
+                // Convert to all bases
+                const results = {
+                    'Binary (Base 2)': decimalValue.toString(2),
+                    'Octal (Base 8)': decimalValue.toString(8),
+                    'Decimal (Base 10)': decimalValue.toString(10),
+                    'Hexadecimal (Base 16)': decimalValue.toString(16).toUpperCase()
+                };
+                
+                displayResults(results);
+                
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        }
+        
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('results');
+            const resultsList = document.getElementById('resultsList');
+            
+            let html = '';
+            for (let [base, value] of Object.entries(results)) {
+                html += `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 5px 0; background: white; border-radius: 5px;">
+                        <span><strong>${base}:</strong> ${value}</span>
+                        <button onclick="copyToClipboard('${value}')" class="btn btn-secondary" style="padding: 5px 10px; font-size: 12px;">Copy</button>
+                    </div>
+                `;
+            }
+            
+            resultsList.innerHTML = html;
+            resultsDiv.style.display = 'block';
+        }
+        
+        function copyAllResults() {
+            const resultsList = document.getElementById('resultsList');
+            const results = resultsList.querySelectorAll('div');
+            let allResults = '';
+            
+            results.forEach(result => {
+                const text = result.querySelector('span').textContent;
+                allResults += text + '\n';
+            });
+            
+            copyToClipboard(allResults.trim());
+        }
+        
+        // Allow Enter key to trigger conversion
+        document.getElementById('inputValue').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                convertNumber();
+            }
+        });
+    </script>
+</body>
+</html>
