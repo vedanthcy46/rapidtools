@@ -185,23 +185,49 @@
             }
             
             try {
-                const binaryArray = input.split(' ').filter(binary => binary.length > 0);
+                let binaryArray;
+                
+                // Check if input has spaces (space-separated format)
+                if (input.includes(' ')) {
+                    binaryArray = input.split(' ').filter(binary => binary.length > 0);
+                } else {
+                    // No spaces - assume continuous binary, split into 8-bit chunks
+                    if (input.length % 8 !== 0) {
+                        alert('Binary input without spaces must be in 8-bit chunks (length must be multiple of 8)');
+                        return;
+                    }
+                    binaryArray = [];
+                    for (let i = 0; i < input.length; i += 8) {
+                        binaryArray.push(input.substr(i, 8));
+                    }
+                }
+                
                 if (binaryArray.length === 0) {
-                    alert('Please enter valid binary code separated by spaces');
+                    alert('Please enter valid binary code');
                     return;
                 }
                 
                 const text = binaryArray.map(binary => {
+                    // Validate binary (only 0s and 1s)
+                    if (!/^[01]+$/.test(binary)) {
+                        throw new Error('Invalid binary: ' + binary + ' (only 0s and 1s allowed)');
+                    }
+                    
                     const decimal = parseInt(binary, 2);
-                    if (isNaN(decimal)) {
+                    if (isNaN(decimal) || decimal > 255) {
                         throw new Error('Invalid binary: ' + binary);
                     }
                     return String.fromCharCode(decimal);
                 }).join('');
                 
+                if (text.length === 0) {
+                    alert('No valid text could be generated from the binary input');
+                    return;
+                }
+                
                 displayResult(text);
             } catch (error) {
-                alert('Invalid binary format. Please use space-separated 8-bit binary numbers. Error: ' + error.message);
+                alert('Error: ' + error.message + '\n\nPlease enter binary in one of these formats:\n- Space separated: 01001000 01100101 01101100 01101100 01101111\n- Continuous: 0100100001100101011011000110110001101111');
             }
         }
         
