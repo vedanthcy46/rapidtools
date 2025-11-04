@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Binary Converter | Binary to Text | Free Online Tool</title>
+    <meta name="description" content="Convert text to binary and binary to text instantly. Free online text binary converter with copy functionality.">
+    <meta name="keywords" content="text to binary, binary to text, text converter, binary converter, ascii to binary">
+    <link rel="canonical" href="https://rapidtools.site/tools/text-binary-converter.html">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4030361427497789" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../" class="logo">RapidTools</a>
+            <ul class="nav-menu">
+                <li><a href="../">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search tools...">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Text to Binary Converter</h1>
+                <p>Convert text to binary and binary to text instantly</p>
+            </div>
+
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="inputText">Input:</label>
+                    <textarea id="inputText" class="form-input" placeholder="Enter text or binary" rows="4"></textarea>
+                </div>
+                
+                <div style="display: flex; gap: 10px; margin: 20px 0;">
+                    <button onclick="textToBinary()" class="btn">Text to Binary</button>
+                    <button onclick="binaryToText()" class="btn btn-secondary">Binary to Text</button>
+                </div>
+            </div>
+
+            <div id="results" style="display: none;">
+                <div class="result-container">
+                    <h3>Result:</h3>
+                    <div id="resultText" style="background: white; padding: 15px; border-radius: 8px; margin: 15px 0; word-break: break-all;"></div>
+                    <button onclick="copyResult()" class="btn btn-secondary">Copy Result</button>
+                </div>
+            </div>
+
+            <!-- Middle Ad -->
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4030361427497789"
+                     data-ad-slot="0987654321"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- Information Section -->
+            <div style="margin-top: 40px;">
+                <h2>How to Use</h2>
+                <ul>
+                    <li><strong>Text to Binary:</strong> Enter any text and click "Text to Binary"</li>
+                    <li><strong>Binary to Text:</strong> Enter binary code (separated by spaces) and click "Binary to Text"</li>
+                    <li>Use the "Copy Result" button to copy the converted text</li>
+                </ul>
+
+                <h3>About Binary Encoding</h3>
+                <p>Binary encoding converts text characters into their binary (base-2) representation using ASCII values. Each character is represented by 8 bits (1 byte).</p>
+            </div>
+
+            <!-- Related Tools -->
+            <div style="margin-top: 40px; padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                <h3>Related Tools</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <a href="binary-converter.html" class="tool-link">Binary Converter</a>
+                    <a href="case-converter.html" class="tool-link">Case Converter</a>
+                    <a href="percentage-calculator.html" class="tool-link">Percentage Calculator</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1122334455"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Popular Tools</h4>
+                <ul>
+                    <li><a href="binary-converter.html">Binary Converter</a></li>
+                    <li><a href="temperature-converter.html">Temperature Converter</a></li>
+                    <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+                    <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="../#converters">Converters</a></li>
+                    <li><a href="../#calculators">Calculators</a></li>
+                    <li><a href="../#text-tools">Text Tools</a></li>
+                    <li><a href="../#unit-converters">Unit Converters</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RapidTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function textToBinary() {
+            const input = document.getElementById('inputText').value;
+            if (!input) {
+                alert('Please enter some text');
+                return;
+            }
+            
+            const binary = input.split('').map(char => 
+                char.charCodeAt(0).toString(2).padStart(8, '0')
+            ).join(' ');
+            
+            displayResult(binary);
+        }
+        
+        function binaryToText() {
+            const input = document.getElementById('inputText').value.trim();
+            if (!input) {
+                alert('Please enter binary code');
+                return;
+            }
+            
+            try {
+                const text = input.split(' ').map(binary => 
+                    String.fromCharCode(parseInt(binary, 2))
+                ).join('');
+                
+                displayResult(text);
+            } catch (error) {
+                alert('Invalid binary format. Please use space-separated 8-bit binary numbers.');
+            }
+        }
+        
+        function displayResult(result) {
+            document.getElementById('resultText').textContent = result;
+            document.getElementById('results').style.display = 'block';
+        }
+        
+        function copyResult() {
+            const result = document.getElementById('resultText').textContent;
+            copyToClipboard(result);
+        }
+    </script>
+</body>
+</html>
