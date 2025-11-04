@@ -20,23 +20,27 @@ function performSearch() {
     if (!query) return;
     
     // Simple search - redirect to tool if found
+    const currentPath = window.location.pathname;
+    const isInToolsFolder = currentPath.includes('/tools/');
+    const basePath = isInToolsFolder ? '' : 'tools/';
+    
     const tools = {
-        'binary': 'tools/binary-converter.html',
-        'decimal': 'tools/binary-converter.html',
-        'hex': 'tools/binary-converter.html',
-        'temperature': 'tools/temperature-converter.html',
-        'celsius': 'tools/temperature-converter.html',
-        'fahrenheit': 'tools/temperature-converter.html',
-        'percentage': 'tools/percentage-calculator.html',
-        'percent': 'tools/percentage-calculator.html',
-        'bmi': 'tools/bmi-calculator.html',
-        'age': 'tools/age-calculator.html',
-        'interest': 'tools/simple-interest-calculator.html',
-        'text': 'tools/text-binary-converter.html',
-        'unit': 'tools/unit-converter.html',
-        'length': 'tools/unit-converter.html',
-        'weight': 'tools/unit-converter.html',
-        'mass': 'tools/unit-converter.html'
+        'binary': basePath + 'binary-converter.html',
+        'decimal': basePath + 'binary-converter.html',
+        'hex': basePath + 'binary-converter.html',
+        'temperature': basePath + 'temperature-converter.html',
+        'celsius': basePath + 'temperature-converter.html',
+        'fahrenheit': basePath + 'temperature-converter.html',
+        'percentage': basePath + 'percentage-calculator.html',
+        'percent': basePath + 'percentage-calculator.html',
+        'bmi': basePath + 'bmi-calculator.html',
+        'age': basePath + 'age-calculator.html',
+        'interest': basePath + 'simple-interest-calculator.html',
+        'text': basePath + 'text-binary-converter.html',
+        'unit': basePath + 'unit-converter.html',
+        'length': basePath + 'unit-converter.html',
+        'weight': basePath + 'unit-converter.html',
+        'mass': basePath + 'unit-converter.html'
     };
     
     for (let key in tools) {
