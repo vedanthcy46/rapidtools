@@ -3,6 +3,619 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator | Calculate Your Exact Age Online Free</title>
+    <meta name="description" content="Calculate your exact age in years, months, days, hours, and minutes. Free online age calculator with detailed breakdown and next birthday countdown.">
+    <meta name="keywords" content="age calculator, calculate age, age in days, age in months, birthday calculator, exact age">
+    <link rel="canonical" href="https://rapidtools.site/tools/age-calculator.html">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4030361427497789" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../" class="logo">RapidTools</a>
+            <ul class="nav-menu">
+                <li><a href="../">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search tools...">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Age Calculator</h1>
+                <p>Calculate your exact age and get detailed breakdown</p>
+            </div>
+
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="birthDate">Date of Birth:</label>
+                    <input type="date" id="birthDate" class="form-input">
+                </div>
+                
+                <div class="form-group">
+                    <label for="currentDate">Calculate Age As Of (Optional):</label>
+                    <input type="date" id="currentDate" class="form-input">
+                    <small style="color: #6b7280;">Leave empty to calculate current age</small>
+                </div>
+
+                <button onclick="calculateAge()" class="btn">Calculate Age</button>
+            </div>
+
+            <div id="results" style="display: none;">
+                <div class="result-container">
+                    <div class="result-value" id="mainAge"></div>
+                    <div id="detailedAge" style="margin: 20px 0;"></div>
+                    <div id="additionalInfo" style="margin: 20px 0;"></div>
+                    <button onclick="copyAgeResult()" class="btn btn-secondary">Copy Result</button>
+                </div>
+            </div>
+
+            <!-- Middle Ad -->
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4030361427497789"
+                     data-ad-slot="0987654321"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- Information Section -->
+            <div style="margin-top: 40px;">
+                <h2>How Age is Calculated</h2>
+                <p style="margin-bottom: 20px;">Our age calculator uses precise date arithmetic to determine your exact age. Here's what we calculate:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>📅 Years, Months, Days</h4>
+                        <p>Your exact age broken down into years, months, and remaining days</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>📊 Total Days Lived</h4>
+                        <p>The total number of days you've been alive</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>⏰ Hours & Minutes</h4>
+                        <p>Your age converted to hours and minutes</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>🎂 Next Birthday</h4>
+                        <p>Days remaining until your next birthday</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Age Calculation Facts</h3>
+                <ul style="margin-top: 15px; line-height: 1.8;">
+                    <li>Leap years are automatically accounted for in calculations</li>
+                    <li>The calculator considers the exact date, not just the year</li>
+                    <li>Results are updated in real-time as dates change</li>
+                    <li>You can calculate age for any past or future date</li>
+                    <li>All calculations are performed in your browser for privacy</li>
+                </ul>
+
+                <h3 style="margin-top: 30px;">Common Uses</h3>
+                <ul style="margin-top: 15px; line-height: 1.8;">
+                    <li><strong>Legal Documents:</strong> Verify age for contracts and applications</li>
+                    <li><strong>Medical Records:</strong> Calculate patient age for medical forms</li>
+                    <li><strong>Education:</strong> Determine school enrollment eligibility</li>
+                    <li><strong>Employment:</strong> Verify age requirements for jobs</li>
+                    <li><strong>Personal Interest:</strong> Find out your exact age in different units</li>
+                </ul>
+            </div>
+
+            <!-- Related Tools -->
+            <div style="margin-top: 40px; padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                <h3>Related Tools</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <a href="bmi-calculator.html" class="tool-link">BMI Calculator</a>
+                    <a href="percentage-calculator.html" class="tool-link">Percentage Calculator</a>
+                    <a href="simple-interest-calculator.html" class="tool-link">Simple Interest Calculator</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1122334455"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Popular Tools</h4>
+                <ul>
+                    <li><a href="binary-converter.html">Binary Converter</a></li>
+                    <li><a href="temperature-converter.html">Temperature Converter</a></li>
+                    <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+                    <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="../#converters">Converters</a></li>
+                    <li><a href="../#calculators">Calculators</a></li>
+                    <li><a href="../#text-tools">Text Tools</a></li>
+                    <li><a href="../#unit-converters">Unit Converters</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RapidTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Set current date as default
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('currentDate').value = today;
+        });
+        
+        function calculateAge() {
+            const birthDateInput = document.getElementById('birthDate').value;
+            const currentDateInput = document.getElementById('currentDate').value;
+            
+            if (!birthDateInput) {
+                alert('Please enter your date of birth');
+                return;
+            }
+            
+            const birthDate = new Date(birthDateInput);
+            const currentDate = currentDateInput ? new Date(currentDateInput) : new Date();
+            
+            if (birthDate > currentDate) {
+                alert('Birth date cannot be in the future');
+                return;
+            }
+            
+            // Calculate age
+            const ageData = calculateDetailedAge(birthDate, currentDate);
+            
+            // Display results
+            displayAgeResults(ageData, birthDate, currentDate);
+        }
+        
+        function calculateDetailedAge(birthDate, currentDate) {
+            let years = currentDate.getFullYear() - birthDate.getFullYear();
+            let months = currentDate.getMonth() - birthDate.getMonth();
+            let days = currentDate.getDate() - birthDate.getDate();
+            
+            // Adjust for negative days
+            if (days < 0) {
+                months--;
+                const lastMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+                days += lastMonth.getDate();
+            }
+            
+            // Adjust for negative months
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+            
+            // Calculate total days
+            const totalDays = Math.floor((currentDate - birthDate) / (1000 * 60 * 60 * 24));
+            
+            // Calculate total hours and minutes
+            const totalHours = totalDays * 24;
+            const totalMinutes = totalHours * 60;
+            
+            // Calculate next birthday
+            const nextBirthday = new Date(currentDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+            if (nextBirthday < currentDate) {
+                nextBirthday.setFullYear(currentDate.getFullYear() + 1);
+            }
+            const daysToNextBirthday = Math.ceil((nextBirthday - currentDate) / (1000 * 60 * 60 * 24));
+            
+            return {
+                years,
+                months,
+                days,
+                totalDays,
+                totalHours,
+                totalMinutes,
+                daysToNextBirthday,
+                nextBirthday
+            };
+        }
+        
+        function displayAgeResults(ageData, birthDate, currentDate) {
+            const { years, months, days, totalDays, totalHours, totalMinutes, daysToNextBirthday, nextBirthday } = ageData;
+            
+            // Main age display
+            document.getElementById('mainAge').textContent = `${years} years, ${months} months, ${days} days`;
+            
+            // Detailed breakdown
+            document.getElementById('detailedAge').innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                    <div style="text-align: center; padding: 15px; background: white; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--primary-color);">${years}</div>
+                        <div>Years</div>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: white; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--primary-color);">${months}</div>
+                        <div>Months</div>
+                    </div>
+                    <div style="text-align: center; padding: 15px; background: white; border-radius: 8px;">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--primary-color);">${days}</div>
+                        <div>Days</div>
+                    </div>
+                </div>
+            `;
+            
+            // Additional information
+            document.getElementById('additionalInfo').innerHTML = `
+                <h4 style="margin-bottom: 15px;">Additional Information:</h4>
+                <div style="display: grid; gap: 10px;">
+                    <div style="padding: 10px; background: white; border-radius: 5px;">
+                        <strong>Total Days Lived:</strong> ${totalDays.toLocaleString()} days
+                    </div>
+                    <div style="padding: 10px; background: white; border-radius: 5px;">
+                        <strong>Total Hours:</strong> ${totalHours.toLocaleString()} hours
+                    </div>
+                    <div style="padding: 10px; background: white; border-radius: 5px;">
+                        <strong>Total Minutes:</strong> ${totalMinutes.toLocaleString()} minutes
+                    </div>
+                    <div style="padding: 10px; background: white; border-radius: 5px;">
+                        <strong>Next Birthday:</strong> ${nextBirthday.toDateString()} (${daysToNextBirthday} days to go)
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('results').style.display = 'block';
+        }
+        
+        function copyAgeResult() {
+            const mainAge = document.getElementById('mainAge').textContent;
+            const totalDays = document.querySelector('#additionalInfo div:first-child').textContent;
+            const result = `Age: ${mainAge}\n${totalDays}`;
+            copyToClipboard(result);
+        }
+        
+        // Auto-calculate when dates change
+        document.getElementById('birthDate').addEventListener('change', function() {
+            if (this.value) {
+                calculateAge();
+            }
+        });
+        
+        document.getElementById('currentDate').addEventListener('change', function() {
+            const birthDate = document.getElementById('birthDate').value;
+            if (birthDate) {
+                calculateAge();
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary to Decimal Converter | Hex to Binary | Free Online Tool</title>
+    <meta name="description" content="Convert between binary, decimal, hexadecimal, and octal number systems instantly. Free online number base converter with step-by-step explanations.">
+    <meta name="keywords" content="binary converter, decimal to binary, hex to binary, octal converter, number system converter">
+    <link rel="canonical" href="https://rapidtools.site/tools/binary-converter.html">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Binary Converter",
+        "description": "Convert between binary, decimal, hexadecimal, and octal number systems",
+        "url": "https://rapidtools.site/tools/binary-converter.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0"
+        }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4030361427497789" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../" class="logo">RapidTools</a>
+            <ul class="nav-menu">
+                <li><a href="../">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search tools...">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Binary ↔ Decimal ↔ Hex ↔ Octal Converter</h1>
+                <p>Convert between binary, decimal, hexadecimal, and octal number systems instantly</p>
+            </div>
+
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="inputValue">Enter Value:</label>
+                    <input type="text" id="inputValue" class="form-input" placeholder="Enter number to convert">
+                </div>
+                
+                <div class="form-group">
+                    <label for="fromBase">From Base:</label>
+                    <select id="fromBase" class="form-input">
+                        <option value="10">Decimal (Base 10)</option>
+                        <option value="2">Binary (Base 2)</option>
+                        <option value="16">Hexadecimal (Base 16)</option>
+                        <option value="8">Octal (Base 8)</option>
+                    </select>
+                </div>
+
+                <button onclick="convertNumber()" class="btn">Convert</button>
+            </div>
+
+            <div id="results" style="display: none;">
+                <div class="result-container">
+                    <h3>Conversion Results:</h3>
+                    <div id="resultsList"></div>
+                    <button onclick="copyAllResults()" class="btn btn-secondary" style="margin-top: 15px;">Copy All Results</button>
+                </div>
+            </div>
+
+            <!-- Middle Ad -->
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4030361427497789"
+                     data-ad-slot="0987654321"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- Information Section -->
+            <div style="margin-top: 40px;">
+                <h2>How to Use the Number System Converter</h2>
+                <ol>
+                    <li>Enter the number you want to convert</li>
+                    <li>Select the base of your input number</li>
+                    <li>Click "Convert" to see results in all number systems</li>
+                    <li>Use "Copy All Results" to copy all conversions at once</li>
+                </ol>
+
+                <h3>Number System Guide</h3>
+                <ul>
+                    <li><strong>Binary (Base 2):</strong> Uses digits 0 and 1. Common in computer science.</li>
+                    <li><strong>Decimal (Base 10):</strong> Standard number system using digits 0-9.</li>
+                    <li><strong>Hexadecimal (Base 16):</strong> Uses digits 0-9 and letters A-F.</li>
+                    <li><strong>Octal (Base 8):</strong> Uses digits 0-7. Less common but still used in computing.</li>
+                </ul>
+            </div>
+
+            <!-- Related Tools -->
+            <div style="margin-top: 40px; padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                <h3>Related Tools</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <a href="text-binary-converter.html" class="tool-link">Text to Binary Converter</a>
+                    <a href="percentage-calculator.html" class="tool-link">Percentage Calculator</a>
+                    <a href="temperature-converter.html" class="tool-link">Temperature Converter</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1122334455"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Popular Tools</h4>
+                <ul>
+                    <li><a href="binary-converter.html">Binary Converter</a></li>
+                    <li><a href="temperature-converter.html">Temperature Converter</a></li>
+                    <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+                    <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="../#converters">Converters</a></li>
+                    <li><a href="../#calculators">Calculators</a></li>
+                    <li><a href="../#text-tools">Text Tools</a></li>
+                    <li><a href="../#unit-converters">Unit Converters</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RapidTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function convertNumber() {
+            const inputValue = document.getElementById('inputValue').value.trim();
+            const fromBase = parseInt(document.getElementById('fromBase').value);
+            
+            if (!inputValue) {
+                alert('Please enter a value to convert');
+                return;
+            }
+            
+            try {
+                // Convert input to decimal first
+                let decimalValue;
+                if (fromBase === 10) {
+                    decimalValue = parseInt(inputValue);
+                } else {
+                    decimalValue = parseInt(inputValue, fromBase);
+                }
+                
+                if (isNaN(decimalValue)) {
+                    throw new Error('Invalid input for selected base');
+                }
+                
+                // Convert to all bases
+                const results = {
+                    'Binary (Base 2)': decimalValue.toString(2),
+                    'Octal (Base 8)': decimalValue.toString(8),
+                    'Decimal (Base 10)': decimalValue.toString(10),
+                    'Hexadecimal (Base 16)': decimalValue.toString(16).toUpperCase()
+                };
+                
+                displayResults(results);
+                
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        }
+        
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('results');
+            const resultsList = document.getElementById('resultsList');
+            
+            let html = '';
+            for (let [base, value] of Object.entries(results)) {
+                html += `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; margin: 5px 0; background: white; border-radius: 5px;">
+                        <span><strong>${base}:</strong> ${value}</span>
+                        <button onclick="copyToClipboard('${value}')" class="btn btn-secondary" style="padding: 5px 10px; font-size: 12px;">Copy</button>
+                    </div>
+                `;
+            }
+            
+            resultsList.innerHTML = html;
+            resultsDiv.style.display = 'block';
+        }
+        
+        function copyAllResults() {
+            const resultsList = document.getElementById('resultsList');
+            const results = resultsList.querySelectorAll('div');
+            let allResults = '';
+            
+            results.forEach(result => {
+                const text = result.querySelector('span').textContent;
+                allResults += text + '\n';
+            });
+            
+            copyToClipboard(allResults.trim());
+        }
+        
+        // Allow Enter key to trigger conversion
+        document.getElementById('inputValue').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                convertNumber();
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator | Body Mass Index Calculator | Free Health Tool</title>
     <meta name="description" content="Calculate your Body Mass Index (BMI) instantly. Free BMI calculator with health categories, ideal weight ranges, and health recommendations.">
     <meta name="keywords" content="BMI calculator, body mass index, BMI chart, healthy weight, obesity calculator, fitness calculator">
@@ -36,7 +649,7 @@
     </script>
     
     <!-- AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4030361427497789" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Header -->
@@ -59,7 +672,7 @@
     <div class="ad-container">
         <ins class="adsbygoogle"
              style="display:block"
-             data-ad-client="ca-pub-XXXXXXXXXX"
+             data-ad-client="ca-pub-4030361427497789"
              data-ad-slot="1234567890"
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
@@ -133,7 +746,7 @@
             <div class="ad-container">
                 <ins class="adsbygoogle"
                      style="display:block"
-                     data-ad-client="ca-pub-XXXXXXXXXX"
+                     data-ad-client="ca-pub-4030361427497789"
                      data-ad-slot="0987654321"
                      data-ad-format="auto"
                      data-full-width-responsive="true"></ins>
@@ -198,7 +811,7 @@
     <div class="ad-container">
         <ins class="adsbygoogle"
              style="display:block"
-             data-ad-client="ca-pub-XXXXXXXXXX"
+             data-ad-client="ca-pub-4030361427497789"
              data-ad-slot="1122334455"
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
@@ -341,6 +954,968 @@
                     calculateBMI();
                 }
             });
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator | Calculate Percentages Online Free</title>
+    <meta name="description" content="Free percentage calculator. Calculate what is X% of Y, percentage increase/decrease, and find what percentage one number is of another.">
+    <meta name="keywords" content="percentage calculator, percent calculator, percentage increase, percentage decrease, calculate percentage">
+    <link rel="canonical" href="https://rapidtools.site/tools/percentage-calculator.html">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4030361427497789" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../" class="logo">RapidTools</a>
+            <ul class="nav-menu">
+                <li><a href="../">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search tools...">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Percentage Calculator</h1>
+                <p>Calculate percentages, percentage increase/decrease, and more</p>
+            </div>
+
+            <!-- Calculator Tabs -->
+            <div style="display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap;">
+                <button onclick="showCalculator('basic')" class="btn" id="basicBtn">What is X% of Y?</button>
+                <button onclick="showCalculator('reverse')" class="btn btn-secondary" id="reverseBtn">X is what % of Y?</button>
+                <button onclick="showCalculator('change')" class="btn btn-secondary" id="changeBtn">% Change</button>
+            </div>
+
+            <!-- Basic Percentage Calculator -->
+            <div id="basicCalculator" class="calculator-section">
+                <h3>What is X% of Y?</h3>
+                <div class="tool-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label for="basicPercent">Percentage (%):</label>
+                            <input type="number" id="basicPercent" class="form-input" placeholder="Enter percentage" step="any">
+                        </div>
+                        <div class="form-group">
+                            <label for="basicNumber">Of Number:</label>
+                            <input type="number" id="basicNumber" class="form-input" placeholder="Enter number" step="any">
+                        </div>
+                    </div>
+                    <button onclick="calculateBasic()" class="btn">Calculate</button>
+                </div>
+                <div id="basicResult" class="result-container" style="display: none;"></div>
+            </div>
+
+            <!-- Reverse Percentage Calculator -->
+            <div id="reverseCalculator" class="calculator-section" style="display: none;">
+                <h3>X is what percentage of Y?</h3>
+                <div class="tool-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label for="reverseX">Number X:</label>
+                            <input type="number" id="reverseX" class="form-input" placeholder="Enter first number" step="any">
+                        </div>
+                        <div class="form-group">
+                            <label for="reverseY">Number Y:</label>
+                            <input type="number" id="reverseY" class="form-input" placeholder="Enter second number" step="any">
+                        </div>
+                    </div>
+                    <button onclick="calculateReverse()" class="btn">Calculate</button>
+                </div>
+                <div id="reverseResult" class="result-container" style="display: none;"></div>
+            </div>
+
+            <!-- Percentage Change Calculator -->
+            <div id="changeCalculator" class="calculator-section" style="display: none;">
+                <h3>Percentage Increase/Decrease</h3>
+                <div class="tool-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label for="oldValue">Original Value:</label>
+                            <input type="number" id="oldValue" class="form-input" placeholder="Enter original value" step="any">
+                        </div>
+                        <div class="form-group">
+                            <label for="newValue">New Value:</label>
+                            <input type="number" id="newValue" class="form-input" placeholder="Enter new value" step="any">
+                        </div>
+                    </div>
+                    <button onclick="calculateChange()" class="btn">Calculate</button>
+                </div>
+                <div id="changeResult" class="result-container" style="display: none;"></div>
+            </div>
+
+            <!-- Middle Ad -->
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4030361427497789"
+                     data-ad-slot="0987654321"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- Information Section -->
+            <div style="margin-top: 40px;">
+                <h2>Percentage Calculation Formulas</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>Basic Percentage</h4>
+                        <p><strong>Result = (Percentage / 100) × Number</strong></p>
+                        <p>Example: 25% of 80 = (25/100) × 80 = 20</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>Percentage of Total</h4>
+                        <p><strong>Percentage = (Part / Total) × 100</strong></p>
+                        <p>Example: 20 is what % of 80? = (20/80) × 100 = 25%</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>Percentage Change</h4>
+                        <p><strong>% Change = ((New - Old) / Old) × 100</strong></p>
+                        <p>Example: From 50 to 75 = ((75-50)/50) × 100 = 50%</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Common Percentage Uses</h3>
+                <ul style="margin-top: 15px; line-height: 1.8;">
+                    <li><strong>Discounts:</strong> Calculate sale prices and savings</li>
+                    <li><strong>Tips:</strong> Calculate restaurant tips and service charges</li>
+                    <li><strong>Taxes:</strong> Calculate tax amounts and after-tax prices</li>
+                    <li><strong>Interest:</strong> Calculate loan interest and investment returns</li>
+                    <li><strong>Statistics:</strong> Express data as percentages for comparison</li>
+                    <li><strong>Growth:</strong> Measure business growth and performance</li>
+                </ul>
+            </div>
+
+            <!-- Related Tools -->
+            <div style="margin-top: 40px; padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                <h3>Related Tools</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <a href="simple-interest-calculator.html" class="tool-link">Simple Interest Calculator</a>
+                    <a href="bmi-calculator.html" class="tool-link">BMI Calculator</a>
+                    <a href="binary-converter.html" class="tool-link">Binary Converter</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1122334455"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Popular Tools</h4>
+                <ul>
+                    <li><a href="binary-converter.html">Binary Converter</a></li>
+                    <li><a href="temperature-converter.html">Temperature Converter</a></li>
+                    <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+                    <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="../#converters">Converters</a></li>
+                    <li><a href="../#calculators">Calculators</a></li>
+                    <li><a href="../#text-tools">Text Tools</a></li>
+                    <li><a href="../#unit-converters">Unit Converters</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RapidTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function showCalculator(type) {
+            // Hide all calculators
+            document.querySelectorAll('.calculator-section').forEach(calc => {
+                calc.style.display = 'none';
+            });
+            
+            // Reset button styles
+            document.querySelectorAll('button[id$="Btn"]').forEach(btn => {
+                btn.className = 'btn btn-secondary';
+            });
+            
+            // Show selected calculator and highlight button
+            document.getElementById(type + 'Calculator').style.display = 'block';
+            document.getElementById(type + 'Btn').className = 'btn';
+        }
+        
+        function calculateBasic() {
+            const percent = parseFloat(document.getElementById('basicPercent').value);
+            const number = parseFloat(document.getElementById('basicNumber').value);
+            
+            if (isNaN(percent) || isNaN(number)) {
+                alert('Please enter valid numbers');
+                return;
+            }
+            
+            const result = (percent / 100) * number;
+            
+            document.getElementById('basicResult').innerHTML = `
+                <div class="result-value">${formatNumber(result, 2)}</div>
+                <p><strong>${percent}%</strong> of <strong>${number}</strong> is <strong>${formatNumber(result, 2)}</strong></p>
+                <button onclick="copyToClipboard('${formatNumber(result, 2)}')" class="btn btn-secondary" style="margin-top: 10px;">Copy Result</button>
+            `;
+            document.getElementById('basicResult').style.display = 'block';
+        }
+        
+        function calculateReverse() {
+            const x = parseFloat(document.getElementById('reverseX').value);
+            const y = parseFloat(document.getElementById('reverseY').value);
+            
+            if (isNaN(x) || isNaN(y) || y === 0) {
+                alert('Please enter valid numbers (Y cannot be zero)');
+                return;
+            }
+            
+            const percentage = (x / y) * 100;
+            
+            document.getElementById('reverseResult').innerHTML = `
+                <div class="result-value">${formatNumber(percentage, 2)}%</div>
+                <p><strong>${x}</strong> is <strong>${formatNumber(percentage, 2)}%</strong> of <strong>${y}</strong></p>
+                <button onclick="copyToClipboard('${formatNumber(percentage, 2)}%')" class="btn btn-secondary" style="margin-top: 10px;">Copy Result</button>
+            `;
+            document.getElementById('reverseResult').style.display = 'block';
+        }
+        
+        function calculateChange() {
+            const oldValue = parseFloat(document.getElementById('oldValue').value);
+            const newValue = parseFloat(document.getElementById('newValue').value);
+            
+            if (isNaN(oldValue) || isNaN(newValue) || oldValue === 0) {
+                alert('Please enter valid numbers (original value cannot be zero)');
+                return;
+            }
+            
+            const change = ((newValue - oldValue) / oldValue) * 100;
+            const changeType = change >= 0 ? 'increase' : 'decrease';
+            const changeColor = change >= 0 ? '#10b981' : '#ef4444';
+            
+            document.getElementById('changeResult').innerHTML = `
+                <div class="result-value" style="color: ${changeColor};">${formatNumber(Math.abs(change), 2)}% ${changeType}</div>
+                <p>From <strong>${oldValue}</strong> to <strong>${newValue}</strong> is a <strong style="color: ${changeColor};">${formatNumber(Math.abs(change), 2)}% ${changeType}</strong></p>
+                <button onclick="copyToClipboard('${formatNumber(Math.abs(change), 2)}% ${changeType}')" class="btn btn-secondary" style="margin-top: 10px;">Copy Result</button>
+            `;
+            document.getElementById('changeResult').style.display = 'block';
+        }
+        
+        // Add Enter key support for all inputs
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const calculator = this.closest('.calculator-section');
+                    if (calculator.id === 'basicCalculator') calculateBasic();
+                    else if (calculator.id === 'reverseCalculator') calculateReverse();
+                    else if (calculator.id === 'changeCalculator') calculateChange();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator | Calculate Interest Online Free</title>
+    <meta name="description" content="Calculate simple interest, total amount, and interest earned with our free online calculator. Perfect for loans, investments, and financial planning.">
+    <meta name="keywords" content="simple interest calculator, interest calculator, loan calculator, investment calculator, financial calculator">
+    <link rel="canonical" href="https://rapidtools.site/tools/simple-interest-calculator.html">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4030361427497789" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../" class="logo">RapidTools</a>
+            <ul class="nav-menu">
+                <li><a href="../">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search tools...">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Simple Interest Calculator</h1>
+                <p>Calculate simple interest, total amount, and interest earned</p>
+            </div>
+
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="principal">Principal Amount ($):</label>
+                    <input type="number" id="principal" class="form-input" placeholder="Enter principal amount" step="0.01" min="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="rate">Annual Interest Rate (%):</label>
+                    <input type="number" id="rate" class="form-input" placeholder="Enter interest rate" step="0.01" min="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="time">Time Period:</label>
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+                        <input type="number" id="time" class="form-input" placeholder="Enter time period" step="0.01" min="0">
+                        <select id="timeUnit" class="form-input">
+                            <option value="years">Years</option>
+                            <option value="months">Months</option>
+                            <option value="days">Days</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button onclick="calculateInterest()" class="btn">Calculate Interest</button>
+            </div>
+
+            <div id="results" style="display: none;">
+                <div class="result-container">
+                    <h3>Calculation Results:</h3>
+                    <div id="resultDetails"></div>
+                    <button onclick="copyInterestResult()" class="btn btn-secondary" style="margin-top: 15px;">Copy Results</button>
+                </div>
+            </div>
+
+            <!-- Middle Ad -->
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4030361427497789"
+                     data-ad-slot="0987654321"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- Information Section -->
+            <div style="margin-top: 40px;">
+                <h2>Simple Interest Formula</h2>
+                <div style="padding: 20px; background: var(--light-bg); border-radius: 8px; margin: 20px 0;">
+                    <h4>Simple Interest = (Principal × Rate × Time) / 100</h4>
+                    <p><strong>Total Amount = Principal + Simple Interest</strong></p>
+                </div>
+
+                <h3>Formula Components</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>💰 Principal (P)</h4>
+                        <p>The initial amount of money borrowed or invested</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>📈 Rate (R)</h4>
+                        <p>The annual interest rate expressed as a percentage</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>⏰ Time (T)</h4>
+                        <p>The time period for which money is borrowed or invested</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Simple vs Compound Interest</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="padding: 20px; background: white; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        <h4>Simple Interest</h4>
+                        <ul style="margin-top: 10px; line-height: 1.6;">
+                            <li>Interest calculated only on principal</li>
+                            <li>Interest amount remains constant</li>
+                            <li>Linear growth over time</li>
+                            <li>Easier to calculate</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 20px; background: white; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                        <h4>Compound Interest</h4>
+                        <ul style="margin-top: 10px; line-height: 1.6;">
+                            <li>Interest calculated on principal + accumulated interest</li>
+                            <li>Interest amount increases over time</li>
+                            <li>Exponential growth over time</li>
+                            <li>More complex calculation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Common Applications</h3>
+                <ul style="margin-top: 15px; line-height: 1.8;">
+                    <li><strong>Personal Loans:</strong> Calculate interest on car loans, personal loans</li>
+                    <li><strong>Savings Accounts:</strong> Some basic savings accounts use simple interest</li>
+                    <li><strong>Short-term Investments:</strong> Calculate returns on short-term investments</li>
+                    <li><strong>Educational Purposes:</strong> Learn basic interest calculations</li>
+                    <li><strong>Quick Estimates:</strong> Get rough estimates for financial planning</li>
+                </ul>
+            </div>
+
+            <!-- Related Tools -->
+            <div style="margin-top: 40px; padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                <h3>Related Financial Tools</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <a href="percentage-calculator.html" class="tool-link">Percentage Calculator</a>
+                    <a href="bmi-calculator.html" class="tool-link">BMI Calculator</a>
+                    <a href="age-calculator.html" class="tool-link">Age Calculator</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1122334455"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Popular Tools</h4>
+                <ul>
+                    <li><a href="binary-converter.html">Binary Converter</a></li>
+                    <li><a href="temperature-converter.html">Temperature Converter</a></li>
+                    <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+                    <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="../#converters">Converters</a></li>
+                    <li><a href="../#calculators">Calculators</a></li>
+                    <li><a href="../#text-tools">Text Tools</a></li>
+                    <li><a href="../#unit-converters">Unit Converters</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RapidTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function calculateInterest() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const timeValue = parseFloat(document.getElementById('time').value);
+            const timeUnit = document.getElementById('timeUnit').value;
+            
+            if (isNaN(principal) || isNaN(rate) || isNaN(timeValue) || principal <= 0 || rate < 0 || timeValue <= 0) {
+                alert('Please enter valid positive numbers for all fields');
+                return;
+            }
+            
+            // Convert time to years
+            let timeInYears;
+            switch(timeUnit) {
+                case 'years':
+                    timeInYears = timeValue;
+                    break;
+                case 'months':
+                    timeInYears = timeValue / 12;
+                    break;
+                case 'days':
+                    timeInYears = timeValue / 365;
+                    break;
+            }
+            
+            // Calculate simple interest
+            const simpleInterest = (principal * rate * timeInYears) / 100;
+            const totalAmount = principal + simpleInterest;
+            
+            // Display results
+            displayInterestResults(principal, rate, timeValue, timeUnit, simpleInterest, totalAmount, timeInYears);
+        }
+        
+        function displayInterestResults(principal, rate, timeValue, timeUnit, simpleInterest, totalAmount, timeInYears) {
+            const resultDetails = document.getElementById('resultDetails');
+            
+            resultDetails.innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 20px;">
+                    <div style="text-align: center; padding: 20px; background: white; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--primary-color);">$${formatNumber(principal, 2)}</div>
+                        <div>Principal Amount</div>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: white; border-radius: 8px; border-left: 4px solid var(--success-color);">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--success-color);">$${formatNumber(simpleInterest, 2)}</div>
+                        <div>Interest Earned</div>
+                    </div>
+                    <div style="text-align: center; padding: 20px; background: white; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                        <div style="font-size: 24px; font-weight: bold; color: var(--accent-color);">$${formatNumber(totalAmount, 2)}</div>
+                        <div>Total Amount</div>
+                    </div>
+                </div>
+                
+                <div style="background: white; padding: 20px; border-radius: 8px; margin-top: 20px;">
+                    <h4 style="margin-bottom: 15px;">Calculation Details:</h4>
+                    <div style="display: grid; gap: 10px;">
+                        <div><strong>Principal:</strong> $${formatNumber(principal, 2)}</div>
+                        <div><strong>Interest Rate:</strong> ${rate}% per year</div>
+                        <div><strong>Time Period:</strong> ${timeValue} ${timeUnit} (${formatNumber(timeInYears, 2)} years)</div>
+                        <div><strong>Formula:</strong> SI = (P × R × T) / 100</div>
+                        <div><strong>Calculation:</strong> SI = (${formatNumber(principal, 2)} × ${rate} × ${formatNumber(timeInYears, 2)}) / 100 = $${formatNumber(simpleInterest, 2)}</div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('results').style.display = 'block';
+        }
+        
+        function copyInterestResult() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const simpleInterest = parseFloat(document.getElementById('resultDetails').querySelector('div:nth-child(2) div:first-child').textContent.replace('$', ''));
+            const totalAmount = parseFloat(document.getElementById('resultDetails').querySelector('div:nth-child(3) div:first-child').textContent.replace('$', ''));
+            
+            const result = `Principal: $${formatNumber(principal, 2)}\nInterest: $${formatNumber(simpleInterest, 2)}\nTotal: $${formatNumber(totalAmount, 2)}`;
+            copyToClipboard(result);
+        }
+        
+        // Real-time calculation
+        function setupRealTimeCalculation() {
+            const inputs = ['principal', 'rate', 'time'];
+            inputs.forEach(id => {
+                document.getElementById(id).addEventListener('input', function() {
+                    const principal = document.getElementById('principal').value;
+                    const rate = document.getElementById('rate').value;
+                    const time = document.getElementById('time').value;
+                    
+                    if (principal && rate && time && !isNaN(principal) && !isNaN(rate) && !isNaN(time)) {
+                        calculateInterest();
+                    }
+                });
+            });
+            
+            document.getElementById('timeUnit').addEventListener('change', function() {
+                const principal = document.getElementById('principal').value;
+                const rate = document.getElementById('rate').value;
+                const time = document.getElementById('time').value;
+                
+                if (principal && rate && time && !isNaN(principal) && !isNaN(rate) && !isNaN(time)) {
+                    calculateInterest();
+                }
+            });
+        }
+        
+        // Initialize real-time calculation
+        document.addEventListener('DOMContentLoaded', setupRealTimeCalculation);
+        
+        // Allow Enter key to trigger calculation
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    calculateInterest();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter | Celsius to Fahrenheit | Kelvin Converter</title>
+    <meta name="description" content="Convert temperatures between Celsius, Fahrenheit, and Kelvin instantly. Free online temperature converter with accurate formulas and instant results.">
+    <meta name="keywords" content="temperature converter, celsius to fahrenheit, fahrenheit to celsius, kelvin converter, temperature conversion">
+    <link rel="canonical" href="https://rapidtools.site/tools/temperature-converter.html">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Temperature Converter",
+        "description": "Convert temperatures between Celsius, Fahrenheit, and Kelvin",
+        "url": "https://rapidtools.site/tools/temperature-converter.html",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0"
+        }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4030361427497789" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="../" class="logo">RapidTools</a>
+            <ul class="nav-menu">
+                <li><a href="../">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchBox" class="search-box" placeholder="Search tools...">
+                <button id="searchBtn" class="search-btn">🔍</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Top Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Temperature Converter</h1>
+                <p>Convert temperatures between Celsius, Fahrenheit, and Kelvin instantly</p>
+            </div>
+
+            <div class="tool-form">
+                <div class="form-group">
+                    <label for="tempValue">Temperature Value:</label>
+                    <input type="number" id="tempValue" class="form-input" placeholder="Enter temperature" step="any">
+                </div>
+                
+                <div class="form-group">
+                    <label for="fromUnit">From Unit:</label>
+                    <select id="fromUnit" class="form-input">
+                        <option value="celsius">Celsius (°C)</option>
+                        <option value="fahrenheit">Fahrenheit (°F)</option>
+                        <option value="kelvin">Kelvin (K)</option>
+                    </select>
+                </div>
+
+                <button onclick="convertTemperature()" class="btn">Convert Temperature</button>
+            </div>
+
+            <div id="results" style="display: none;">
+                <div class="result-container">
+                    <h3>Temperature Conversion Results:</h3>
+                    <div id="resultsList"></div>
+                    <button onclick="copyAllResults()" class="btn btn-secondary" style="margin-top: 15px;">Copy All Results</button>
+                </div>
+            </div>
+
+            <!-- Middle Ad -->
+            <div class="ad-container">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4030361427497789"
+                     data-ad-slot="0987654321"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- Information Section -->
+            <div style="margin-top: 40px;">
+                <h2>Temperature Conversion Formulas</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>Celsius to Fahrenheit</h4>
+                        <p><strong>°F = (°C × 9/5) + 32</strong></p>
+                        <p>Example: 25°C = (25 × 9/5) + 32 = 77°F</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>Fahrenheit to Celsius</h4>
+                        <p><strong>°C = (°F - 32) × 5/9</strong></p>
+                        <p>Example: 77°F = (77 - 32) × 5/9 = 25°C</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                        <h4>Celsius to Kelvin</h4>
+                        <p><strong>K = °C + 273.15</strong></p>
+                        <p>Example: 25°C = 25 + 273.15 = 298.15K</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 30px;">Common Temperature References</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        <strong>Water Freezing Point</strong><br>
+                        0°C = 32°F = 273.15K
+                    </div>
+                    <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        <strong>Water Boiling Point</strong><br>
+                        100°C = 212°F = 373.15K
+                    </div>
+                    <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        <strong>Room Temperature</strong><br>
+                        20°C = 68°F = 293.15K
+                    </div>
+                    <div style="padding: 15px; background: white; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        <strong>Body Temperature</strong><br>
+                        37°C = 98.6°F = 310.15K
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Tools -->
+            <div style="margin-top: 40px; padding: 20px; background: var(--light-bg); border-radius: 8px;">
+                <h3>Related Tools</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px;">
+                    <a href="unit-converter.html" class="tool-link">Unit Converter</a>
+                    <a href="binary-converter.html" class="tool-link">Binary Converter</a>
+                    <a href="percentage-calculator.html" class="tool-link">Percentage Calculator</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Ad -->
+    <div class="ad-container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4030361427497789"
+             data-ad-slot="1122334455"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Popular Tools</h4>
+                <ul>
+                    <li><a href="binary-converter.html">Binary Converter</a></li>
+                    <li><a href="temperature-converter.html">Temperature Converter</a></li>
+                    <li><a href="percentage-calculator.html">Percentage Calculator</a></li>
+                    <li><a href="bmi-calculator.html">BMI Calculator</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="../#converters">Converters</a></li>
+                    <li><a href="../#calculators">Calculators</a></li>
+                    <li><a href="../#text-tools">Text Tools</a></li>
+                    <li><a href="../#unit-converters">Unit Converters</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RapidTools. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        function convertTemperature() {
+            const tempValue = parseFloat(document.getElementById('tempValue').value);
+            const fromUnit = document.getElementById('fromUnit').value;
+            
+            if (isNaN(tempValue)) {
+                alert('Please enter a valid temperature value');
+                return;
+            }
+            
+            let celsius, fahrenheit, kelvin;
+            
+            // Convert input to Celsius first
+            switch(fromUnit) {
+                case 'celsius':
+                    celsius = tempValue;
+                    break;
+                case 'fahrenheit':
+                    celsius = (tempValue - 32) * 5/9;
+                    break;
+                case 'kelvin':
+                    celsius = tempValue - 273.15;
+                    break;
+            }
+            
+            // Convert from Celsius to other units
+            fahrenheit = (celsius * 9/5) + 32;
+            kelvin = celsius + 273.15;
+            
+            const results = {
+                'Celsius (°C)': formatNumber(celsius, 2),
+                'Fahrenheit (°F)': formatNumber(fahrenheit, 2),
+                'Kelvin (K)': formatNumber(kelvin, 2)
+            };
+            
+            displayResults(results);
+        }
+        
+        function displayResults(results) {
+            const resultsDiv = document.getElementById('results');
+            const resultsList = document.getElementById('resultsList');
+            
+            let html = '';
+            for (let [unit, value] of Object.entries(results)) {
+                html += `
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; margin: 10px 0; background: white; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                        <span style="font-size: 18px;"><strong>${unit}:</strong> ${value}</span>
+                        <button onclick="copyToClipboard('${value}')" class="btn btn-secondary" style="padding: 8px 15px; font-size: 14px;">Copy</button>
+                    </div>
+                `;
+            }
+            
+            resultsList.innerHTML = html;
+            resultsDiv.style.display = 'block';
+        }
+        
+        function copyAllResults() {
+            const resultsList = document.getElementById('resultsList');
+            const results = resultsList.querySelectorAll('div');
+            let allResults = '';
+            
+            results.forEach(result => {
+                const text = result.querySelector('span').textContent;
+                allResults += text + '\n';
+            });
+            
+            copyToClipboard(allResults.trim());
+        }
+        
+        // Allow Enter key to trigger conversion
+        document.getElementById('tempValue').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                convertTemperature();
+            }
+        });
+        
+        // Real-time conversion as user types
+        document.getElementById('tempValue').addEventListener('input', function() {
+            if (this.value && !isNaN(this.value)) {
+                convertTemperature();
+            }
+        });
+        
+        document.getElementById('fromUnit').addEventListener('change', function() {
+            const tempValue = document.getElementById('tempValue').value;
+            if (tempValue && !isNaN(tempValue)) {
+                convertTemperature();
+            }
         });
     </script>
 </body>
